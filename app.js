@@ -2,7 +2,7 @@ const express = require('express'); //access
 const socket = require('socket.io');
 const app = express(); //initialize the app and server ready
 app.use(express.static("public"));  // index.html is the static file which will be renderred 
-let port = 8080;
+let port = process.env.PORT ||  8080;
 let server = app.listen(port,(e)=>{
     console.log("listening to port"+ port);
 })
